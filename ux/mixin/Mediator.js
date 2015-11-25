@@ -22,7 +22,7 @@ Ext.define('Ext.ux.mixin.Mediator', {
   },
   publish: function() {
     var me = this;
-    return Ext.ux.mixin.MediatorContext.fireEvent.apply(Ext.ux.mixin.MediatorContext, arguments);
+    return Ext.ux.Mediator.fireEvent.apply(Ext.ux.mixin.MediatorContext, arguments);
   },
   addSubscription: function(name, fn) {
     var me = this;
@@ -39,7 +39,7 @@ Ext.define('Ext.ux.mixin.Mediator', {
     if (!Ext.isString(name)) {
       name = name.toString();
     }
-    me.addManagedListener(Ext.ux.mixin.MediatorContext, name, fn, me);
+    me.addManagedListener(Ext.ux.Mediator, name, fn, me);
   },
   warnFn: function() {
     //<debug>
