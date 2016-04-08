@@ -21,8 +21,7 @@ Ext.define('Ext.ux.mixin.Mediator', {
     }
   },
   publish: function() {
-    var me = this;
-    return Ext.ux.Mediator.fireEvent.apply(Ext.ux.mixin.MediatorContext, arguments);
+    return Ext.ux.Mediator.fireEvent.apply(Ext.ux.mixin.Mediator, arguments);
   },
   addSubscription: function(name, fn) {
     var me = this;
